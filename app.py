@@ -10,7 +10,7 @@ from keras.models import load_model
 
 # Load model
 
-model = load_model("model/skin_model.h5")
+model = load_model("model/skin.h5")
 
 print(keras.__version__)
 
@@ -37,20 +37,17 @@ def pred_disease(skin):
     pred = np.argmax(result)                                                
     
     if(pred == 0):
-        # Acne
-        return "acne", 'acne.html'
+        # Atopic Dermatitis
+        return "Atopic_Dermatitis", 'Atopic_Dermatitis.html'
     elif(pred == 1):
-        # Eczema
-        return "eczema", 'eczema.html'
+        # Basil cell carcinoma
+        return "Basil_Cell_Carcinoma", 'Basil_Cell_Carcinoma.html'
     elif(pred == 2): 
-        # Melanoma
-        return "melanoma", 'melanoma.html'
+        # Eczema
+        return "Eczema", 'Eczema.html'
     elif(pred == 3): 
-        # Psoriasis
-        return "psoriasis", 'psoriasis.html'
-    elif(pred == 4):
-        # Tinea versicolor
-        return "tinea versicolor", 'tineaversicolor.html'
+        # Melanoma
+        return "Melanoma", 'Melanoma.html'
     else:
         return "random", 'random.html'
     
